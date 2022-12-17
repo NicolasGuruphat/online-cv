@@ -78,7 +78,7 @@
 
 <body>
     <h1>&lth1&gt - Nicolas Guruphat - &lt/h1&gt</h1>
-    <p>Welcome to my portfolio !</p>
+    <p>Welcome to my portfolio !<span id="easter-egg">Well played</span></p>
     <h2>&lth2&gt Projects.json &lt/h2&gt</h2>
     <button onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere"> &lt- click here</span>
     <br>
@@ -87,7 +87,7 @@
     <p id="errorLoading" class="error" style="display:none">> Cross-Origin Request Blocked: The Same Origin Policy
         disallows reading the remote resource at (nah just kidding try again)</p>
     <p id="projects">
-        output:
+        <span style="color: black; background-color:white">output:</span>
         {
             project_1 :
             {
@@ -105,13 +105,26 @@
     </p>
     <p id="loading" style="display:none">Loading</p>
     <h2>&lth2&gt skills.csv &lt/h2&gt</h2>
+    <p style="white-space: pre">
+        # pip install pandas 
+        import pandas as pd
+        
+        # Read the csv file
+        data = pd.read_csv('data.csv')
+        
+        # Print it out if you want
+        print(data)
+    </p>
+    <div id="run-wrapper">
+        <div id="run"></div>
+    </div>
     <div id="skills" style="background-color: red">
         <p id="skills-csv">
             Hard Skills, Soft Skills
             dev, english
 
         </p>
-        <div >
+        <div>
             <table id="skills-html">
                 <thead>
                     <tr>
@@ -129,8 +142,40 @@
     </div>
     <br>
     <p>
-        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank">Contact me</a>
+        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">Contact me</a>
     </p>
+
+    <!-- <h2>&lth2&gt education &lt/h2&gt</h2>
+
+    <p>high school > DUT informatique > Ingenering</p>
+    <p>2017->2020    2020->2022         2022->2025</p>
+    <p>high school</p>
+    <p>|-> ISN Speciality</p>
+    <p>|-> 2017-2020</p>
+    <p>DUT informatique</p>
+    <p>|-> 2020-2022</p>
+    <p>Ingenering</p>
+    <p>|-> 2022-2025</p> -->
+
+    <h2>&lth2&gt certification &lt/h2&gt</h2>
+    <!-- <p>|----------| % - </p> -->
+
+    <h3>Open Classroom</h3>
+    <p>|@@@@@@@@@@| 100% - Testez l'interface de votre site</p>
+    <p>|@@@@------| 45%  - Apprenez à programmer avec JavaScript</p>
+    <p>|@@@@------| 42%  - Utilisez HTML 5 pour l'interface utilisateur</p>
+    <p>|@@--------| 23%  - Apprenez à apprendre</p>
+    <p>|----------| 8%   - Créez votre site web avec HTML5 et CSS3</p>
+    <p>|----------| 6%   - Récupérez et affichez des données distantes</p>
+    <h3>Microsoft Learn</h3>
+    
+    <p>Microsoft Azure Fundamentals</p>
+    <ul>
+        <li>
+            <p>|----------| 3% - Microsoft Azure Fundamentals: Describe cloud concepts</p>
+        </li>
+    </ul>
+    
     <h2>Have fun with the CSS of this website !</h2>
     <div style="border: 1px solid white">
         <span style="border: 1px solid white; background-color: #505088;">styles.css</span>
@@ -150,15 +195,17 @@
             }
 
             .error {
-                color: #FF9494
+                /* color: #FF9494; */
+                color: #a4000f;
+                background-color: #fdf2f5;
             }
-
+           
             #projects {
                 white-space: pre;
                 display: none;
-                background-color: lightsteelblue;
+                background-color: white;
                 border: 1px solid black;
-                color: black
+                color: rgb(86, 84, 84);
             }
         
             .vue-project {
@@ -208,6 +255,40 @@
                 position: absolute;
                 animation: moving2 1.5s infinite linear;
             }
+            h2{
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+            #contact{
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background-color: transparent;
+                font-size: 25px;
+            }
+            #easter-egg{
+                color:#0f0f23;
+            }
+            #run-wrapper{
+                border-radius:100%;
+                width:50px;
+                background: white;
+                height:50px;
+            }
+            #run {
+                width: 0;
+                height: 0;
+                border-top: 12.5px solid transparent;
+                border-left: 25px solid #7efa65;
+                border-bottom: 12.5px solid transparent;
+                background-color: transparent;
+                margin-left: 20px;
+                margin-top: 25px;
+            }
+            #run:hover {
+                border-left: 25px solid green;
+            }
+
         </style>
     </div>
     // to-do : buy milk
