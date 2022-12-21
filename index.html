@@ -144,7 +144,7 @@
     </div>
     <br>
     <p>
-        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">Contact me</a>
+        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">[Contact me]</a>
     </p>
 
     <!-- <h2>&lth2&gt education &lt/h2&gt</h2>
@@ -186,14 +186,24 @@
             contenteditable>
             @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
+            :root {
+                --green: #7efa65;
+                --red: #FF9494;
+                --black: #0f0f23;
+            }
             * {
-                background-color: #0f0f23;
+                background-color: var(--black);
                 color: white;
                 font-family: "Source Code Pro";
             }
-
+            p{
+                color:rgb(181, 181, 181)
+            }
+            button{
+                cursor:pointer;
+            }
             #loading {
-                color: #7efa65;
+                color: var(--green);
             }
 
             .error {
@@ -217,7 +227,7 @@
                 color:#EFD81D;
             }
             .project-name {
-                color : #FF9494;
+                color : var(--red);
             }
             #skills-csv {
                 background-color: white;
@@ -248,12 +258,12 @@
                 100%{transform: translateX(25px);}
             }
             .clickHere {
-                color: #FF9494;
+                color: var(--red);
                 position: absolute;
                 animation: moving 1.5s infinite linear;
             }
             .clickHere2 {
-                color: #FF9494;
+                color: var(--red);
                 position: absolute;
                 animation: moving2 1.5s infinite linear;
             }
@@ -267,9 +277,14 @@
                 right: 10px;
                 background-color: transparent;
                 font-size: 25px;
+                text-decoration: none;
+                color: var(--green)
+            }
+            #contact:hover{
+                color: white;
             }
             #easter-egg{
-                color:#0f0f23;
+                color: var(--black);
             }
             #run-wrapper{
                 border-radius:100%;
@@ -279,7 +294,7 @@
             }
             #run {
                 border-top: 12.5px solid transparent;
-                border-left: 25px solid #7efa65;
+                border-left: 25px solid var(--red);
                 border-bottom: 12.5px solid transparent;
                 background-color: transparent;
                 margin-left: 15px;
@@ -287,8 +302,11 @@
                 top: 25%;
                 position: relative;
             }
-            #run:hover {
-                border-left: 25px solid green;
+            #run-wrapper:hover > #run {
+                border-left: 25px solid white;
+            }
+            #run-wrapper:hover  {
+               background-color: var(--red);
             }
 
         </style>
