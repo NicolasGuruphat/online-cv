@@ -6,147 +6,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="./script.js"></script>
     <title>> Nicolas G.</title>
-    <script>
-        let projects = false;
-        let errorMessage = false;
-        async function displayProjects() {
-            if (!errorMessage && !projects) {
-                document.getElementById('loading').style.display = 'block';
-                await changeLoading()
-                document.getElementById('errorLoading').style.display = 'block';
-                document.getElementById('loading').style.display = 'none';
-                errorMessage = true;
-
-            } else if (errorMessage && !projects) {
-                document.getElementById('projects').style.display = 'block';
-                document.getElementById('errorLoading').style.display = 'none';
-                projects = true;
-            }
-        }
-        async function changeLoading() {
-            let i = 0;
-            let element = document.getElementById('loading');
-            while (i < 6) {
-                if (i == 0) {
-                    element.innerHTML = "Loading";
-                }
-                else if (i == 1) {
-                    element.innerHTML = "Loading .";
-                }
-                else if (i == 2) {
-                    element.innerHTML = "Loading ..";
-                }
-                else if (i == 3) {
-                    element.innerHTML = "Loading ...";
-                }
-                else if (i == 4) {
-                    element.innerHTML = "Loading";
-                }
-                else if (i == 5) {
-                    element.innerHTML = "L ad gg.";
-                    await new Promise(resolve => setTimeout(resolve, 150)); 
-                    element.innerHTML = "Loaig.";
-                    await new Promise(resolve => setTimeout(resolve, 120)); 
-                    element.innerHTML = "Loddaig....";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "LL";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "Loddaig....";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "LL";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "Lodd@ig....";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "4242";
-                    await new Promise(resolve => setTimeout(resolve, 50));
-                    element.innerHTML = "4242";
-                    await new Promise(resolve => setTimeout(resolve, 50));
-                    element.innerHTML = "4242";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "Lo@@dD11g....";
-                    await new Promise(resolve => setTimeout(resolve, 600)); 
-                    break
-                }
-                await new Promise(resolve => setTimeout(resolve, 800)); 
-                i++;
-            }
-        }
-
-    </script>
+    
 </head>
 
 <body>
-    <h1>&lth1&gt - Nicolas Guruphat - &lt/h1&gt</h1>
-    <p>Welcome to my portfolio !<span id="easter-egg">Well played</span></p>
-    <h2>&lth2&gt Projects.json &lt/h2&gt</h2>
-    <button onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere"> &lt- click here</span>
-    <br>
-    <br>
-    <button onclick="displayProjects()">SELECT * FROM NGU.PROJECTS</button><span class="clickHere2"> &lt- or here</span>
-    <p id="errorLoading" class="error" style="display:none">> Cross-Origin Request Blocked: The Same Origin Policy
-        disallows reading the remote resource at (nah just kidding try again)</p>
-    <p id="projects">
-        <span style="color: black; background-color:white">output:</span>
-        {
-            project_1 :
-            {
-                name : "<span class="project-name">test</span>,
-                language : "<span class="js-project">JavaScript</span>"",
-                framework : "<span class="vue-project">Vue3</span>"
-            },
-            project_2 :
-            {
-                name : "<span class="project-name">test</span>",
-                language : "<span class="js-project">JavaScript</span>",
-                framework : "<span class="vue-project">Vue3</span>""
-            }
-        }
-    </p>
-    <p id="loading" style="display:none">Loading</p>
-    <h2>&lth2&gt skills.csv &lt/h2&gt</h2>
-    <p style="white-space: pre">
-        # pip install pandas 
-        import pandas as pd
-        
-        # Read the csv file
-        data = pd.read_csv('data.csv')
-        
-        # Print it out if you want
-        print(data)
-    </p>
-    <div>
-        <div id="run-wrapper">
-            <div id="run"></div>
-        </div>
-    </div>
-    <div id="skills" style="background-color: red">
-        <p id="skills-csv">
-            Hard Skills, Soft Skills
-            dev, english
-
-        </p>
-        <div>
-            <table id="skills-html">
-                <thead>
-                    <tr>
-                        <th>Hard Skills</th>
-                        <th>Soft Skills</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>dev</td>
-                        <td>English</td>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <br>
+    <h1>&lth1&gt ~~~~~~~~~~~~~~~ Nicolas Guruphat ~~~~~~~~~~~~~~~ &lt/h1&gt</h1>
     <p>
         <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">[Contact me]</a>
     </p>
+    <p>Welcome to my portfolio !<span id="easter-egg">Well played</span></p>
 
+
+    <h2 id="projects-title">&lth2&gt Projects.json &lt/h2&gt</h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
+    <br>
+    <div id="projects-section">
+        <button onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere"> &lt- click here</span>
+        <br>
+        <br>
+        <button onclick="displayProjects()">SELECT * FROM NGU.PROJECTS</button><span class="clickHere2"> &lt- or here</span>
+        <p id="errorLoading" class="error" style="display:none">> Cross-Origin Request Blocked: The Same Origin Policy
+            disallows reading the remote resource at (nah just kidding try again)</p>
+        <p id="projects">
+            <span style="color: black; background-color:white">output:</span>
+            {
+                project_1 :
+                {
+                    name : "<span class="project-name">test</span>,
+                    language : "<span class="js-project">JavaScript</span>"",
+                    framework : "<span class="vue-project">Vue3</span>"
+                },
+                project_2 :
+                {
+                    name : "<span class="project-name">test</span>",
+                    language : "<span class="js-project">JavaScript</span>",
+                    framework : "<span class="vue-project">Vue3</span>""
+                }
+            }
+        </p>
+        <p id="loading" style="display:none">Loading</p>
+    <<button onclick="switchSection('projects')" class="extend"  id="close-bracket-projects">}</button>
+    </div>
+    <h2>&lth2&gt skills.csv &lt/h2&gt</h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
+    <br>
+    <div id="skills-section">
+        <p style="white-space: pre">
+            # pip install pandas 
+            import pandas as pd
+            
+            # Read the csv file
+            data = pd.read_csv('data.csv')
+            
+            # Print it out if you want
+            print(data)
+        </p>
+        <div>
+            <div id="run-wrapper">
+                <div id="run"></div>
+            </div>
+        </div>
+        <div id="skills" style="background-color: red">
+            <p id="skills-csv">
+                Hard Skills, Soft Skills
+                dev, english
+
+            </p>
+            <div>
+                <table id="skills-html">
+                    <thead>
+                        <tr>
+                            <th>Hard Skills</th>
+                            <th>Soft Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>dev</td>
+                            <td>English</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+    <<button onclick="switchSection('skills')" class="extend"  id="close-bracket-skills">}</button>
+
+    </div>
     <!-- <h2>&lth2&gt education &lt/h2&gt</h2>
 
     <p>high school > DUT informatique > Ingenering</p>
@@ -159,25 +104,30 @@
     <p>Ingenering</p>
     <p>|-> 2022-2025</p> -->
 
-    <h2>&lth2&gt certification &lt/h2&gt</h2>
-    <!-- <p>|----------| % - </p> -->
+    <h2 id="certifications-title">&lth2&gt Certifications &lt/h2&gt</h2><button onclick="switchSection('certifications')" class="extend" id = "open-bracket-certifications">{ ... }</button>
+    <br>
+    <div id="certifications-section">
+        <!-- <p>|----------| % - </p> -->
 
-    <h3>Open Classroom</h3>
-    <p>|@@@@@@@@@@| 100% - Testez l'interface de votre site</p>
-    <p>|@@@@------| 45%  - Apprenez à programmer avec JavaScript</p>
-    <p>|@@@@------| 42%  - Utilisez HTML 5 pour l'interface utilisateur</p>
-    <p>|@@--------| 23%  - Apprenez à apprendre</p>
-    <p>|----------| 8%   - Créez votre site web avec HTML5 et CSS3</p>
-    <p>|----------| 6%   - Récupérez et affichez des données distantes</p>
-    <h3>Microsoft Learn</h3>
-    
-    <p>Microsoft Azure Fundamentals</p>
-    <ul>
-        <li>
-            <p>|----------| 3% - Microsoft Azure Fundamentals: Describe cloud concepts</p>
-        </li>
-    </ul>
-    
+        <h3>Open Classroom</h3>
+        <p>|@@@@@@@@@@| 100% - Testez l'interface de votre site</p>
+        <p>|@@@@------| 45%  - Apprenez à programmer avec JavaScript</p>
+        <p>|@@@@------| 42%  - Utilisez HTML 5 pour l'interface utilisateur</p>
+        <p>|@@--------| 23%  - Apprenez à apprendre</p>
+        <p>|----------| 8%   - Créez votre site web avec HTML5 et CSS3</p>
+        <p>|----------| 6%   - Récupérez et affichez des données distantes</p>
+        <h3>Microsoft Learn</h3>
+        
+        <p>Microsoft Azure Fundamentals</p>
+        <ul>
+            <li>
+                <p>|----------| 3% - Microsoft Azure Fundamentals: Describe cloud concepts</p>
+            </li>
+        </ul>
+        <button onclick="switchSection('certifications')" class="extend"  id="close-bracket-certifications">}</button>
+
+    </div>
+    <br>
     <h2>Have fun with the CSS of this website !</h2>
     <div style="border: 1px solid white">
         <span style="border: 1px solid white; background-color: #505088;">styles.css</span>
@@ -190,20 +140,39 @@
                 --green: #7efa65;
                 --red: #FF9494;
                 --black: #0f0f23;
+                --grey: rgb(181, 181, 181)
+            }
+            html, body {
+                margin:0;
             }
             * {
                 background-color: var(--black);
                 color: white;
                 font-family: "Source Code Pro";
+                margin-left: 1%;
+                margin-right: 1%;
             }
             p{
-                color:rgb(181, 181, 181)
+                color:var(--grey);
             }
             button{
                 cursor:pointer;
             }
             #loading {
                 color: var(--green);
+            }
+            #projects-section{
+                display: none;
+            }
+            #skills-section{
+                display: none;
+            }
+            #certifications-section{
+                display: none;
+            }
+            .extend{
+                /* display: inline; */
+                border:none;
             }
 
             .error {
@@ -270,6 +239,7 @@
             h2{
                 margin-top: 50px;
                 margin-bottom: 30px;
+                margin-left:5%;
             }
             #contact{
                 position: fixed;
