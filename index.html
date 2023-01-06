@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="./script.js"></script>
-    <title>> Nicolas G.</title>
-    
+    <title> Nicolas G.</title>
+<!-- TODO :
+    * Fix skills sections
+    * Fix bug gap tab styles.css and cross
+ -->
 </head>
 
 <body>
@@ -21,7 +24,7 @@
 
     <h2 id="projects-title">&lth2&gt Projects.json &lt/h2&gt</h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
     <br>
-    <div id="projects-section">
+    <div id="projects-section" class="section">
         <button onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere"> &lt- click here</span>
         <br>
         <br>
@@ -46,11 +49,11 @@
             }
         </p>
         <p id="loading" style="display:none">Loading</p>
-    <<button onclick="switchSection('projects')" class="extend"  id="close-bracket-projects">}</button>
+    <button onclick="switchSection('projects')" class="extend"  id="close-bracket-projects">}</button>
     </div>
     <h2>&lth2&gt skills.csv &lt/h2&gt</h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
     <br>
-    <div id="skills-section">
+    <div id="skills-section" class="section">
         <p style="white-space: pre">
             # pip install pandas 
             import pandas as pd
@@ -92,21 +95,24 @@
     <<button onclick="switchSection('skills')" class="extend"  id="close-bracket-skills">}</button>
 
     </div>
-    <!-- <h2>&lth2&gt education &lt/h2&gt</h2>
-
-    <p>high school > DUT informatique > Ingenering</p>
-    <p>2017->2020    2020->2022         2022->2025</p>
-    <p>high school</p>
-    <p>|-> ISN Speciality</p>
-    <p>|-> 2017-2020</p>
-    <p>DUT informatique</p>
-    <p>|-> 2020-2022</p>
-    <p>Ingenering</p>
-    <p>|-> 2022-2025</p> -->
-
+    <h2 id="education-title">&lth2&gt Education &lt/h2&gt</h2><button onclick="switchSection('education')" class="extend" id = "open-bracket-education">{ ... }</button>
+    <br>
+    <div id="education-section" class="section">
+    
+        <p>high school > DUT informatique > Ingenering</p>
+        <p>2017->2020    2020->2022         2022->2025</p>
+        <p>high school</p>
+        <p>|-> ISN Speciality</p>
+        <p>|-> 2017-2020</p>
+        <p>DUT informatique</p>
+        <p>|-> 2020-2022</p>
+        <p>Ingenering</p>
+        <p>|-> 2022-2025</p> 
+        <button onclick="switchSection('education')" class="extend"  id="close-bracket-education">}</button>
+    </div>
     <h2 id="certifications-title">&lth2&gt Certifications &lt/h2&gt</h2><button onclick="switchSection('certifications')" class="extend" id = "open-bracket-certifications">{ ... }</button>
     <br>
-    <div id="certifications-section">
+    <div id="certifications-section" class="section">
         <!-- <p>|----------| % - </p> -->
 
         <h3>Open Classroom</h3>
@@ -124,6 +130,7 @@
                 <p>|----------| 3% - Microsoft Azure Fundamentals: Describe cloud concepts</p>
             </li>
         </ul>
+        
         <button onclick="switchSection('certifications')" class="extend"  id="close-bracket-certifications">}</button>
 
     </div>
@@ -140,14 +147,15 @@
                 --green: #7efa65;
                 --red: #FF9494;
                 --black: #0f0f23;
-                --grey: rgb(181, 181, 181)
+                --grey: rgb(181, 181, 181);
+                --white: rgb(228, 228, 228);
             }
             html, body {
                 margin:0;
             }
             * {
                 background-color: var(--black);
-                color: white;
+                color: var(--white);
                 font-family: "Source Code Pro";
                 margin-left: 1%;
                 margin-right: 1%;
@@ -161,17 +169,15 @@
             #loading {
                 color: var(--green);
             }
-            #projects-section{
+           
+            .section{
                 display: none;
             }
-            #skills-section{
-                display: none;
-            }
-            #certifications-section{
-                display: none;
-            }
+   
             .extend{
                 /* display: inline; */
+                color: var(--grey);
+                font-size: 22px;
                 border:none;
             }
 

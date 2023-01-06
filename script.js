@@ -18,7 +18,7 @@ function toggleDisplaySection(sectionName) {
     if(window[sectionName+"SectionDisplay"]){
         section.style.display = 'block';
         closeBracket.style.display = 'block';
-        closeBracket.style.color = 'var(--red)'
+        closeBracket.style.color = 'var(--red)';
         openBracket.innerHTML = '{';
         openBracket.style.color = 'var(--red)';
     }else{
@@ -34,7 +34,7 @@ function disableSection(sectionName){
     openBracket.style.color = 'var(--grey)';
     closeBracket.style.display= 'none';
 }
-listSection = ['projects', 'skills','certifications'];
+let listSection = ['projects', 'skills','certifications'];
 
 let projectsSectionDisplay = false;
 let skillsSectionDisplay = false;
