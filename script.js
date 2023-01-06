@@ -1,10 +1,9 @@
-let listSection = ['projects', 'skills','certifications'];
-
 let projectsSectionDisplay = false;
 let skillsSectionDisplay = false;
 
 let projects = false;
 let errorMessage = false;
+let activeSection = "";
 
 document.addEventListener('keydown', quitPopUp);
 
@@ -22,14 +21,10 @@ function desactivatePopUp(){
 }
 function switchSection(section){
     toggleDisplaySection(section);
-    if(window[section+"SectionDisplay"]){
-        for(element in listSection){
-            element=listSection[element];
-            if(element != section){
-                disableSection(element);
-            }
-        }
+    if(activeSection !== ""){
+        disableSection(activeSection);
     }
+    activeSection = section;
 }
 
 function toggleDisplaySection(sectionName) {
