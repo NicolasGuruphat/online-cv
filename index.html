@@ -7,21 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="./script.js"></script>
-    <title> Nicolas G.</title>
+    <title>&gt Nicolas G.</title>
 <!-- TODO :
     * Fix skills sections
     * Fix bug gap tab styles.css and cross
+    * Fix bug {...} color after click
  -->
 </head>
 
 <body>
-    <h1><span class="tag">&lth1&gt</span> ~~~~~~~~~~~~~~ Nicolas Guruphat ~~~~~~~~~~~~~~ <span class="tag">&lt/h1&gt</span></h1>
-  
+    <div id="filter" style="z-index :10000;background-color: rgba(0,0,0,0.75);position:fixed;height:10000px;width:10000px;top:0;left:0;margin:0"></div>
+    
+    <h1><span class="tag">&lth1&gt</span> ~~~~~~~~~~~~~~     Nicolas Guruphat ~~~~~~~~~~~~~~ <span class="tag">&lt/h1&gt</span></h1>
+    <div id="popup" style="z-index:10000000;background-color:var(--dark-blue) ; padding: 10px;border:1px solid white; top:200px; left : 200px; position:fixed; width:800px;height: 300px;">
+        Welcome !<br><br>
+        This is my portfolio, it's still a work in progress but you can already check out my projects and my skills.<br><br>
+        I hope you'll enjoy your visit !<br>
+        <p style="position: absolute; bottom:10px; color: inherit; background-color: inherit;">Nicolas Guruphat</p>
+        <button onclick="desactivatePopUp()"style="position:absolute; bottom:10px; right:5px">[E]nter</button>
+    </div>
     <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact" class="fixed">[Contact me]</a>
-    <a href="https://www.codewars.com/users/Nicolas%20Guruphat"  id="codewars" class="fixed">[CodeWars]</a>
-    <a href="https://github.com/NicolasGuruphat"  id="github" class="fixed">[GitHub]</a>
+    <a href="https://stackoverflow.com/users/19390218/nicolas"  id="stackoverflow" class="fixed">[Stack Overflow]</a>
+    <a href="https://www.codewars.com/users/Nicolas%20Guruphat"  id="codewars" class="fixed">[Code Wars]</a>
+    <a href="https://github.com/NicolasGuruphat"  id="github" class="fixed">[Git Hub]</a>
 
-        
+    <p class="frame" style="top: 1px;left:1px; margin:0; position:fixed">┌ </p>
+    <p class="frame" style="bottom:1px ;right:1px; margin:0">┘</p>
+    <p class="frame" style="top: 1px;right:1px; margin:0">┐</p>
+    <p class="frame" style="bottom: 1px ;left :1px; margin:0">└</p>
     <p>Welcome to my portfolio ! (WIP)<span id="easter-egg">Well played</span></p>
 
 
@@ -142,17 +155,20 @@
     <div style="border: 1px solid white">
         <span style="border: 1px solid white; background-color: #505088;">styles.css</span>
         <span style="border: 1px solid white;background-color: #FF9494;"> X </span>
-        <style style="display:block; border:1px solid white; white-space: pre ;background-color:darkblue"
+        <style style="display:block; border:1px solid white; white-space: pre ;background-color:var(--dark-blue)"
             contenteditable>
             @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
             :root {
                 --green: #7efa65;
+                --dark-green: #448936;
                 --red: #FF9494;
-                --black: #0f0f23;
+                --black: #0d0d24;
+               
                 --grey: rgb(181, 181, 181);
                 --white: rgb(228, 228, 228);
                 --blue: #abfdfd;
+                --dark-blue: #012456;
                 /* 
                 #ccffff 
                 #b8f8f8
@@ -194,7 +210,6 @@
             .extend:hover{
                 color:var(--green);
                 animation: wiggling 0.25s infinite;
-
             }
             .error {
                 /* color: #FF9494; */
@@ -248,10 +263,11 @@
                 100%{transform: translateX(25px);}
             }
             @keyframes wiggling {
-                0%{transform: translateX(0px);}
-                50%{transform: translateX(10px);}
-                100%{transform: translateX(0px);}
+                0%{transform: rotate(0deg) translateX(0px);}
+                50%{transform: rotate(5deg) translateX(1.5px);}
+                100%{transform: rotate(0deg) translateX(0px);}
             }
+         
             .clickHere {
                 color: var(--red);
                 position: absolute;
@@ -268,13 +284,16 @@
                 margin-left:5%;
             }
             #contact{
-                top: 10px;
+                top: 25px;
             }
-            #github{
-                top: 80px;
+            #stackoverflow{
+                bottom: 25px
             }
             #codewars{
-                top: 45px;
+                bottom: 60px;
+            }
+            #github{
+                bottom: 95px;;
             }
             .fixed{
                 position: fixed;
@@ -283,6 +302,12 @@
                 font-size: 25px;
                 text-decoration: none;
                 color: var(--green)
+            }
+            .frame{
+                position: fixed;
+                background-color: transparent;
+                font-size: 22.5px;
+                color: var(--dark-green);
             }
             .fixed:hover{
                 color: white;

@@ -1,3 +1,25 @@
+let listSection = ['projects', 'skills','certifications'];
+
+let projectsSectionDisplay = false;
+let skillsSectionDisplay = false;
+
+let projects = false;
+let errorMessage = false;
+
+document.addEventListener('keydown', quitPopUp);
+
+function quitPopUp(e){
+    console.log(e.key);
+    if (e.key === 'E' || e.key === 'e' || e.key === 'Escape' || e.key === 'Enter') {
+        desactivatePopUp();
+    }
+}
+
+function desactivatePopUp(){
+    document.getElementById('filter').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+    document.removeEventListener('keydown', quitPopUp);
+}
 function switchSection(section){
     toggleDisplaySection(section);
     if(window[section+"SectionDisplay"]){
@@ -34,13 +56,7 @@ function disableSection(sectionName){
     openBracket.style.color = 'var(--grey)';
     closeBracket.style.display= 'none';
 }
-let listSection = ['projects', 'skills','certifications'];
 
-let projectsSectionDisplay = false;
-let skillsSectionDisplay = false;
-
-let projects = false;
-let errorMessage = false;
 async function displayProjects() {
     if (!errorMessage && !projects) {
         document.getElementById('loading').style.display = 'block';
