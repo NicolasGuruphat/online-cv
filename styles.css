@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+:root {
+    --green: #7efa65;
+    --red: #FF9494;
+    --black: #0f0f23;
+}
+
+* {
+    background-color: var(--black);
+    color: white;
+    font-family: "Source Code Pro";
+    margin-left: 1%;
+    margin-right: 1%;
+}
+html, body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+
+p {
+    color: rgb(181, 181, 181)
+}
+
+button {
+    cursor: pointer;
+}
+
+#loading {
+    color: var(--green);
+}
+
+.error {
+    /* color: #FF9494; */
+    color: #a4000f;
+    background-color: #fdf2f5;
+}
+
+#projects {
+    white-space: pre;
+    display: none;
+    background-color: white;
+    border: 1px solid black;
+    color: rgb(86, 84, 84);
+}
+
+.vue-project {
+    color: #3FB27F;
+}
+
+.js-project {
+    color: #EFD81D;
+}
+
+.project-name {
+    color: var(--red);
+}
+
+#skills-csv {
+    background-color: white;
+    color: black;
+    width: 50%;
+    float: left;
+    white-space: pre;
+    height: 100%;
+}
+
+#skills-html {
+    background-color: white;
+    color: black;
+    width: 50%;
+    float: right;
+    /* border-left: 0.1% solid black; */
+    margin-top: 16px;
+    height: 100px;
+
+}
+
+@keyframes moving {
+    0% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(25px);
+    }
+
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes moving2 {
+    0% {
+        transform: translateX(25px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(25px);
+    }
+}
+
+.clickHere {
+    color: var(--red);
+    position: absolute;
+    animation: moving 1.5s infinite linear;
+}
+
+.clickHere2 {
+    color: var(--red);
+    position: absolute;
+    animation: moving2 1.5s infinite linear;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 3%;
+}
+
+#contact {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--green)
+}
+
+#contact:hover {
+    color: white;
+}
+
+#easter-egg {
+    color: var(--black);
+}
+
+#run-wrapper {
+    border-radius: 100%;
+    width: 50px;
+    background: white;
+    height: 50px;
+}
+
+#run {
+    border-top: 12.5px solid transparent;
+    border-left: 25px solid var(--red);
+    border-bottom: 12.5px solid transparent;
+    background-color: transparent;
+    margin-left: 15px;
+    margin-top: 25px;
+    top: 25%;
+    position: relative;
+}
+
+#run-wrapper:hover>#run {
+    border-left: 25px solid white;
+}
+
+#run-wrapper:hover {
+    background-color: var(--red);
+}

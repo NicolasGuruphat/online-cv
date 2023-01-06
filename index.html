@@ -7,104 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>> Nicolas G.</title>
-    <script>
-        let projects = false;
-        let errorMessage = false;
-        async function displayProjects() {
-            if (!errorMessage && !projects) {
-                document.getElementById('loading').style.display = 'block';
-                await changeLoading()
-                document.getElementById('errorLoading').style.display = 'block';
-                document.getElementById('loading').style.display = 'none';
-                errorMessage = true;
-
-            } else if (errorMessage && !projects) {
-                document.getElementById('projects').style.display = 'block';
-                document.getElementById('errorLoading').style.display = 'none';
-                projects = true;
-            }
-        }
-        async function changeLoading() {
-            let i = 0;
-            let element = document.getElementById('loading');
-            while (i < 6) {
-                if (i == 0) {
-                    element.innerHTML = "Loading";
-                }
-                else if (i == 1) {
-                    element.innerHTML = "Loading .";
-                }
-                else if (i == 2) {
-                    element.innerHTML = "Loading ..";
-                }
-                else if (i == 3) {
-                    element.innerHTML = "Loading ...";
-                }
-                else if (i == 4) {
-                    element.innerHTML = "Loading";
-                }
-                else if (i == 5) {
-                    element.innerHTML = "L ad gg.";
-                    await new Promise(resolve => setTimeout(resolve, 150)); 
-                    element.innerHTML = "Loaig.";
-                    await new Promise(resolve => setTimeout(resolve, 120)); 
-                    element.innerHTML = "Loddaig....";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "LL";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "Loddaig....";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "LL";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "Lodd@ig....";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "4242";
-                    await new Promise(resolve => setTimeout(resolve, 50));
-                    element.innerHTML = "4242";
-                    await new Promise(resolve => setTimeout(resolve, 50));
-                    element.innerHTML = "4242";
-                    await new Promise(resolve => setTimeout(resolve, 50)); 
-                    element.innerHTML = "Lo@@dD11g....";
-                    await new Promise(resolve => setTimeout(resolve, 600)); 
-                    break
-                }
-                await new Promise(resolve => setTimeout(resolve, 800)); 
-                i++;
-            }
-        }
-
-    </script>
 </head>
 
 <body>
-    <h1>&lth1&gt - Nicolas Guruphat - &lt/h1&gt</h1>
-    <p>Welcome to my portfolio !<span id="easter-egg">Well played</span></p>
-    <h2>&lth2&gt Projects.json &lt/h2&gt</h2>
-    <button onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere"> &lt- click here</span>
-    <br>
-    <br>
-    <button onclick="displayProjects()">SELECT * FROM NGU.PROJECTS</button><span class="clickHere2"> &lt- or here</span>
-    <p id="errorLoading" class="error" style="display:none">> Cross-Origin Request Blocked: The Same Origin Policy
-        disallows reading the remote resource at (nah just kidding try again)</p>
-    <p id="projects">
-        <span style="color: black; background-color:white">output:</span>
-        {
-            project_1 :
-            {
-                name : "<span class="project-name">test</span>,
-                language : "<span class="js-project">JavaScript</span>"",
-                framework : "<span class="vue-project">Vue3</span>"
-            },
-            project_2 :
-            {
-                name : "<span class="project-name">test</span>",
-                language : "<span class="js-project">JavaScript</span>",
-                framework : "<span class="vue-project">Vue3</span>""
-            }
-        }
+    <div style="height:15%; margin-bottom: 5%;">
+        <h1>&lth1&gt ~~~~~~~~~ Nicolas Guruphat ~~~~~~~~~ &lt/h1&gt</h1>
+        <p>Welcome to my portfolio !<span id="easter-egg">Well played</span></p>
+        <h2>&lth2&gt Summary &lt/h2&gt</h2>
+    </div>
+    <div style="border:1px dashed grey; width:90%; height:65% ; text-align: center; margin-left:5%;margin-right:5%; font-size: 2.5vh;">
+        <!-- <h3><a href="#projects-title">Projects</a></h3> -->
+        <h3><a href="./test.html">Projects</a></h3>
+        <h3><a href="#skills-title">Skills</a></h3>
+        <h3><a href="#certification-title">Certifications</a></h3>
+        <h3><a href="#projectsTitle">Projects</a></h3>
+        <h3><a href="#projectsTitle">Projects</a></h3>
+    </div>
+    <p>
+        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">[Contact me]</a>
     </p>
-    <p id="loading" style="display:none">Loading</p>
-    <h2>&lth2&gt skills.csv &lt/h2&gt</h2>
+    <footer>
+        Nicolas Guruphat - 2023
+    </footer>
+<!-- <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <h3 id="skills-title">&lth3&gt skills.csv &lt/h3&gt</h3>
     <p style="white-space: pre">
         # pip install pandas 
         import pandas as pd
@@ -143,11 +84,8 @@
         </div>
     </div>
     <br>
-    <p>
-        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">[Contact me]</a>
-    </p>
 
-    <!-- <h2>&lth2&gt education &lt/h2&gt</h2>
+    <h3>&lth3&gt education &lt/h3&gt</h3>
 
     <p>high school > DUT informatique > Ingenering</p>
     <p>2017->2020    2020->2022         2022->2025</p>
@@ -157,10 +95,10 @@
     <p>DUT informatique</p>
     <p>|-> 2020-2022</p>
     <p>Ingenering</p>
-    <p>|-> 2022-2025</p> -->
+    <p>|-> 2022-2025</p>
 
-    <h2>&lth2&gt certification &lt/h2&gt</h2>
-    <!-- <p>|----------| % - </p> -->
+    <h3 id="certification-title">&lth3&gt certification &lt/h3&gt</h3>
+    <p>|----------| % - </p>
 
     <h3>Open Classroom</h3>
     <p>|@@@@@@@@@@| 100% - Testez l'interface de votre site</p>
@@ -178,7 +116,7 @@
         </li>
     </ul>
     
-    <h2>Have fun with the CSS of this website !</h2>
+    <h3>Have fun with the CSS of this website !</h3>
     <div style="border: 1px solid white">
         <span style="border: 1px solid white; background-color: #505088;">styles.css</span>
         <span style="border: 1px solid white;background-color: #FF9494;"> X </span>
@@ -312,7 +250,8 @@
         </style>
     </div>
     // to-do : buy milk
+    -->
 </body>
 
     
-</html>
+</html> 
