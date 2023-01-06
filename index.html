@@ -15,14 +15,17 @@
 </head>
 
 <body>
-    <h1>&lth1&gt ~~~~~~~~~~~~~~~ Nicolas Guruphat ~~~~~~~~~~~~~~~ &lt/h1&gt</h1>
-    <p>
-        <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact">[Contact me]</a>
-    </p>
+    <h1><span class="tag">&lth1&gt</span> ~~~~~~~~~~~~~~ Nicolas Guruphat ~~~~~~~~~~~~~~ <span class="tag">&lt/h1&gt</span></h1>
+  
+    <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact" class="fixed">[Contact me]</a>
+    <a href="https://www.codewars.com/users/Nicolas%20Guruphat"  id="codewars" class="fixed">[CodeWars]</a>
+    <a href="https://github.com/NicolasGuruphat"  id="github" class="fixed">[GitHub]</a>
+
+        
     <p>Welcome to my portfolio ! (WIP)<span id="easter-egg">Well played</span></p>
 
 
-    <h2 id="projects-title">&lth2&gt Projects.json &lt/h2&gt</h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
+    <h2 id="projects-title"><span class="tag">&lth2&gt</span> Projects.json <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
     <br>
     <div id="projects-section" class="section">
         <button onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere"> &lt- click here</span>
@@ -51,7 +54,7 @@
         <p id="loading" style="display:none">Loading</p>
     <button onclick="switchSection('projects')" class="extend"  id="close-bracket-projects">}</button>
     </div>
-    <h2>&lth2&gt skills.csv &lt/h2&gt</h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
+    <h2><span class="tag">&lth2&gt</span> skills.csv <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
     <br>
     <div id="skills-section" class="section">
         <p style="white-space: pre">
@@ -95,7 +98,7 @@
     <<button onclick="switchSection('skills')" class="extend"  id="close-bracket-skills">}</button>
 
     </div>
-    <h2 id="education-title">&lth2&gt Education &lt/h2&gt</h2><button onclick="switchSection('education')" class="extend" id = "open-bracket-education">{ ... }</button>
+    <h2 id="education-title"><span class="tag">&lth2&gt</span> Education <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('education')" class="extend" id = "open-bracket-education">{ ... }</button>
     <br>
     <div id="education-section" class="section">
     
@@ -110,7 +113,7 @@
         <p>|-> 2022-2025</p> 
         <button onclick="switchSection('education')" class="extend"  id="close-bracket-education">}</button>
     </div>
-    <h2 id="certifications-title">&lth2&gt Certifications &lt/h2&gt</h2><button onclick="switchSection('certifications')" class="extend" id = "open-bracket-certifications">{ ... }</button>
+    <h2 id="certifications-title"><span class="tag">&lth2&gt</span> Certifications <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('certifications')" class="extend" id = "open-bracket-certifications">{ ... }</button>
     <br>
     <div id="certifications-section" class="section">
         <!-- <p>|----------| % - </p> -->
@@ -149,6 +152,11 @@
                 --black: #0f0f23;
                 --grey: rgb(181, 181, 181);
                 --white: rgb(228, 228, 228);
+                --blue: #abfdfd;
+                /* 
+                #ccffff 
+                #b8f8f8
+                */
             }
             html, body {
                 margin:0;
@@ -169,7 +177,9 @@
             #loading {
                 color: var(--green);
             }
-           
+            .tag{
+                color: var(--blue);
+            }
             .section{
                 display: none;
             }
@@ -179,8 +189,13 @@
                 color: var(--grey);
                 font-size: 22px;
                 border:none;
-            }
 
+            }
+            .extend:hover{
+                color:var(--green);
+                animation: wiggling 0.25s infinite;
+
+            }
             .error {
                 /* color: #FF9494; */
                 color: #a4000f;
@@ -232,6 +247,11 @@
                 50%{transform: translateX(10px);}
                 100%{transform: translateX(25px);}
             }
+            @keyframes wiggling {
+                0%{transform: translateX(0px);}
+                50%{transform: translateX(10px);}
+                100%{transform: translateX(0px);}
+            }
             .clickHere {
                 color: var(--red);
                 position: absolute;
@@ -248,15 +268,23 @@
                 margin-left:5%;
             }
             #contact{
-                position: fixed;
                 top: 10px;
+            }
+            #github{
+                top: 80px;
+            }
+            #codewars{
+                top: 45px;
+            }
+            .fixed{
+                position: fixed;
                 right: 10px;
                 background-color: transparent;
                 font-size: 25px;
                 text-decoration: none;
                 color: var(--green)
             }
-            #contact:hover{
+            .fixed:hover{
                 color: white;
             }
             #easter-egg{
