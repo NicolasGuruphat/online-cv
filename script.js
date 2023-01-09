@@ -7,6 +7,19 @@ let activeSection = "";
 
 document.addEventListener('keydown', quitPopUp);
 
+function removeAllCSS(){
+    document.querySelectorAll('style,link[rel="stylesheet"]').forEach(item => item.remove())
+}
+
+function generateUUID(){
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
+window.onload = function(){
+    Array.from(document.getElementsByClassName('generated-uuid')).forEach(element => {element.innerHTML=generateUUID()});
+
+}
 function quitPopUp(e){
     console.log(e.key);
     if (e.key === 'E' || e.key === 'e' || e.key === 'Escape' || e.key === 'Enter') {
@@ -20,10 +33,11 @@ function desactivatePopUp(){
     document.removeEventListener('keydown', quitPopUp);
 }
 function switchSection(section){
-    toggleDisplaySection(section);
     if(activeSection !== ""){
         disableSection(activeSection);
     }
+    toggleDisplaySection(section);
+
     activeSection = section;
 }
 
@@ -63,6 +77,7 @@ async function displayProjects() {
     } else if (errorMessage && !projects) {
         document.getElementById('projects').style.display = 'block';
         document.getElementById('errorLoading').style.display = 'none';
+        Array.from(document.getElementsByClassName('display-projects')).forEach(e=>e.style.display = 'none');
         projects = true;
     }
 }
