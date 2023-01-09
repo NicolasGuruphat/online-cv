@@ -11,6 +11,10 @@
 <!-- TODO :
     * Fix skills sections
     * Fix bug {...} color after click
+    * Add sumarry access on the right (fixed) with cool animation to do the transition
+    * Finish color in projects + add projects
+    * Fix Education section
+    * Access last commit date of the project
  -->
 </head>
 
@@ -38,8 +42,8 @@
 
     <h1><span class="tag">&lth1&gt</span> ~~~~~~~~~~~~~~     Nicolas Guruphat ~~~~~~~~~~~~~~ <span class="tag">&lt/h1&gt</span></h1>
 
-    <p>Welcome to my portfolio ! (WIP)<span id="easter-egg">Well played</span></p>
-
+    <!-- <p>Welcome to my portfolio ! (WIP)<span id="easter-egg">Well played</span></p> -->
+    <p style="text-align: center; margin-right:15%;"> <a href="#projects-title">Projects</a> / <a href="#skills-title">Skills</a> / <a href="#education-title">Education</a> / <a href="#certifications-title">Certifications</a></p>
 
     <h2 id="projects-title"><span class="tag">&lth2&gt</span> Projects.json <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
     <br>
@@ -58,7 +62,8 @@
                     "id" : "<span class="generated-uuid"></span>",
                     "name" : "<span class="project-name">Modular Productivity</span>",
                     "language" : "<span class="js-project">JavaScript</span>",
-                    "framework" : "<span class="vue-project">Vue3</span>"
+                    "framework" : "<span class="vue-project">Vue3</span>",
+                    "status" : "Active"
                 },
                 "<span class="project-id">project_2</span>" :
                 {
@@ -66,13 +71,46 @@
                     "name" : "<span class="project-name">Modular Productivity API</span>",
                     "language" : "<span class="php-project">PHP</span>",
                     "framework" : "<span class="laravel-project">Laravel</span>"    
+                    "status" : "On Hold"
+                }
+                "<span class="project-id">project_3</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">Online CV</span>",
+                    "languages" : "HTML/CSS/<span class="js-project">JS</span>",
+                    "status" : "Active"
+                }
+                "<span class="project-id">project_4</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">Goblin's Revenge</span>",
+                    "language" : " C# ",
+                    "engine" : " Unity ",
+                    "status" : "Completed"
+                }
+                "<span class="project-id">project_6</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">Addiction-Killer</span>",
+                    "language" : "<span class="js-project">JavaScript</span>",
+                    "description" : "Firefox addon",
+                    "status" : "Active"
+                }
+                "<span class="project-id">project_6</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">ClassyPicator</span>",
+                    "language" : " Python ",
+                    "description" : "Python tool that classify your files",
+                    "status" : "Completed"
+                    "link" : "<span class="project-link"><a href="https://github.com/NicolasGuruphat/ClassiPycator" style="color:inherit; background-color:inherit">ClassiPycator</a></span>"
                 }
             }
         </div>
         <p id="loading" style="display:none">Loading</p>
     <button onclick="switchSection('projects')" class="extend"  id="close-bracket-projects" style="clear:left;">}</button>
     </div>
-    <h2><span class="tag">&lth2&gt</span> skills.csv <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
+    <h2 id="skills-title"><span class="tag">&lth2&gt</span> Skills.csv <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
     <br>
     <div id="skills-section" class="section">
         <p style="white-space: pre">
@@ -181,6 +219,7 @@
             }
             html, body {
                 margin:0;
+                scroll-behavior: smooth;
             }
             * {
                 background-color: var(--black);
@@ -243,8 +282,8 @@
                 display: none;  
                 float:left;
                 /* display:inline; */
-                background-color: var(--white);
-                border: 4px solid var(--red);
+                background-color: white;
+                border: 4px dashed var(--red);
                 color: var(--black);
                 padding-right:100px;
 
@@ -276,6 +315,10 @@
             .project-name {
                 color : var(--red);
                 background-color: inherit;
+            }
+            .project-link {
+                background-color: inherit;
+                color:var(--blue)
             }
             #skills-csv {
                 background-color: white;
