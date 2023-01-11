@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js"></script>
+    <title>&gt Nicolas G.</title>
+<!-- TODO :
+    * Fix skills sections
+    * Fix bug {...} color after click
+    * Add sumarry access on the right (fixed) with cool animation to do the transition
+    * Finish color in projects + add projects
+    * Fix Education section
+    * Access last commit date of the project
+ -->
+</head>
+
+<body>
+    <div id="filter" style="z-index :100;background-color: rgba(0,0,0,0.75);position:fixed;height:10000px;width:10000px;top:0;left:0;margin:0"></div>
+    
+    <div id="popup" style="z-index:101;background-color:var(--dark-blue) ; padding: 10px;border:1px solid white; top:50%; left : 50%; position:fixed; width:800px;height: 300px;transform: translate(-50%, -50%);">
+        Welcome !<br><br>
+        This is my portfolio, it's still a work in progress but you can already check out my projects and my skills.<br><br>
+        I hope you'll enjoy your visit !<br>
+        <p style="position: absolute; bottom:10px; color: inherit; background-color: inherit;">Nicolas Guruphat</p>
+        <button onclick="desactivatePopUp()"style="position:absolute; bottom:10px; right:5px">[E]nter</button>
+    </div>
+
+   
+    <a href="mailto:nicolas.guruphat@gmail.com" target="_blank" id="contact" class="fixed">[Contact me]</a>
+    <a href="https://stackoverflow.com/users/19390218/nicolas"  id="stackoverflow" class="fixed">[Stack Overflow]</a>
+    <a href="https://www.codewars.com/users/Nicolas%20Guruphat"  id="codewars" class="fixed">[Code Wars]</a>
+    <a href="https://github.com/NicolasGuruphat"  id="github" class="fixed">[Git Hub]</a>
+
+    <p class="frame" style="top: 1px;left:1px;">┌ </p>
+    <p class="frame" style="bottom:1px ;right:1px;">┘</p>
+    <p class="frame" style="top: 1px;right:1px;">┐</p>
+    <p class="frame" style="bottom: 1px ;left :1px;">└</p>
+
+    <h1><span class="tag">&lth1&gt</span> ~~~~~~~~~~~~~~     Nicolas Guruphat ~~~~~~~~~~~~~~ <span class="tag">&lt/h1&gt</span></h1>
+
+    <!-- <p>Welcome to my portfolio ! (WIP)<span id="easter-egg">Well played</span></p> -->
+    <p style="text-align: center; margin-right:15%;"> <a href="#projects-title">Projects</a> / <a href="#skills-title">Skills</a> / <a href="#education-title">Education</a> / <a href="#certifications-title">Certifications</a></p>
+
+    <h2 id="projects-title"><span class="tag">&lth2&gt</span> Projects.json <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
+    <br>
+    <div id="projects-section" class="section">
+        <button class="display-projects" onclick="displayProjects()">db.Projects.find( {} )</button><span class="clickHere display-projects"> &lt- click here</span>
+        <br>
+        <br>
+        <button class="display-projects" onclick="displayProjects()">SELECT * FROM NGU.PROJECTS</button><span class="clickHere2 display-projects"> &lt- or here</span>
+        <p id="errorLoading" class="error" style="display:none">> Cross-Origin Request Blocked: The Same Origin Policy
+            disallows reading the remote resource at (nah just kidding try again)</p>
+        <div id="projects">
+            <!-- <span style="color: black; background-color:white">output:</span> -->
+            {
+                "<span class="project-id">project_1</span>" : {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "status" : "Active",
+                    "lastCommit" : "TODO"
+                    "frontEnd" : {
+                        "name" : "<span class="project-name">Modular Productivity</span>",
+                        "language" : "<span class="js-project">JavaScript</span>",
+                        "framework" : "<span class="vue-project">Vue3</span>"
+                        "last"
+                    }
+                    "backEnd" : {
+                        "name" : "<span class="project-name">Modular Productivity API</span>",
+                        "language" : "<span class="php-project">PHP</span>",
+                        "framework" : "<span class="laravel-project">Laravel</span>"    
+                    }
+                }
+                "<span class="project-id">project_2</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">Online CV</span>",
+                    "languages" : "HTML/CSS/<span class="js-project">JS</span>",
+                    "status" : "Active"
+                }
+                "<span class="project-id">project_3</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">Goblin's Revenge</span>",
+                    "language" : " C# ",
+                    "engine" : " Unity ",
+                    "status" : "Completed"
+                }
+                "<span class="project-id">project_4</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">Addiction-Killer</span>",
+                    "language" : "<span class="js-project">JavaScript</span>",
+                    "description" : "Firefox addon",
+                    "status" : "Active"
+                }
+                "<span class="project-id">project_5</span>" :
+                {
+                    "id" : "<span class="generated-uuid"></span>",
+                    "name" : "<span class="project-name">ClassyPicator</span>",
+                    "language" : " Python ",
+                    "description" : "Python tool that classify your files",
+                    "status" : "Completed"
+                    "link" : "<span class="project-link"><a href="https://github.com/NicolasGuruphat/ClassiPycator" style="color:inherit; background-color:inherit">ClassiPycator</a></span>"
+                }
+            }
+        </div>
+        <p id="loading" style="display:none">Loading</p>
+    <button onclick="switchSection('projects')" class="extend"  id="close-bracket-projects" style="clear:left;">}</button>
+    </div>
+    <h2 id="skills-title"><span class="tag">&lth2&gt</span> Skills.csv <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('skills')" class="extend" id = "open-bracket-skills">{ ... }</button>
+    <br>
+    <div id="skills-section" class="section">
+        <p style="white-space: pre">
+            # pip install pandas 
+            import pandas as pd
+            
+            # Read the csv file
+            data = pd.read_csv('data.csv')
+            
+            # Print it out if you want
+            print(data)
+        </p>
+        <div>
+            <div id="run-wrapper">
+                <div id="run"></div>
+            </div>
+        </div>
+        <div id="skills" style="background-color: red">
+            <p id="skills-csv">
+                Hard Skills, Soft Skills
+                dev, english
+
+            </p>
+            <div>
+                <table id="skills-html">
+                    <thead>
+                        <tr>
+                            <th>Hard Skills</th>
+                            <th>Soft Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>dev</td>
+                            <td>English</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+    <<button onclick="switchSection('skills')" class="extend"  id="close-bracket-skills">}</button>
+
+    </div>
+    <h2 id="education-title"><span class="tag">&lth2&gt</span> Education <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('education')" class="extend" id = "open-bracket-education">{ ... }</button>
+    <br>
+    <div id="education-section" class="section">
+    
+        <p>high school > DUT informatique > Ingenering</p>
+        <p>2017->2020    2020->2022         2022->2025</p>
+        <p>high school</p>
+        <p>|-> ISN Speciality</p>
+        <p>|-> 2017-2020</p>
+        <p>DUT informatique</p>
+        <p>|-> 2020-2022</p>
+        <p>Ingenering</p>
+        <p>|-> 2022-2025</p> 
+        <button onclick="switchSection('education')" class="extend"  id="close-bracket-education">}</button>
+    </div>
+    <h2 id="certifications-title"><span class="tag">&lth2&gt</span> Certifications <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('certifications')" class="extend" id = "open-bracket-certifications">{ ... }</button>
+    <br>
+    <div id="certifications-section" class="section">
+        <!-- <p>|----------| % - </p> -->
+
+        <h3>Open Classroom</h3>
+        <p><span class="validate-certification">|@@@@@@@@@@| 100% - Testez l'interface de votre site</span></p>
+        <p>|<span class="validate-certification">@@@@</span>------| 45%  - Apprenez à programmer avec JavaScript</p>
+        <p>|<span class="validate-certification">@@@@</span>------| 42%  - Utilisez HTML 5 pour l'interface utilisateur</p>
+        <p>|<span class="validate-certification">@@</span>--------| 23%  - Apprenez à apprendre</p>
+        <p>|----------| 8%   - Créez votre site web avec HTML5 et CSS3</p>
+        <p>|----------| 6%   - Récupérez et affichez des données distantes</p>
+        <h3>Microsoft Learn</h3>
+        
+        <p>Microsoft Azure Fundamentals</p>
+        <ul>
+            <li>
+                <p>|----------| 3% - Microsoft Azure Fundamentals: Describe cloud concepts</p>
+            </li>
+        </ul>
+        
+        <button onclick="switchSection('certifications')" class="extend"  id="close-bracket-certifications">}</button>
+
+    </div>
+    <br>
+
+    <h2>Have fun with the CSS of this website !</h2>
+    <div style="border: 1px solid white">
+        <span style="border: 1px solid white; background-color: #505088; margin-right: 0px; padding-right: 5px;">styles.css</span><button onclick="removeAllCSS()" id="cross-css">X</button>
+        <style style="display:block; border:1px solid white; white-space: pre ;background-color:var(--dark-blue)"
+            contenteditable>
+            @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+            :root {
+                --green: #7efa65;
+                --dark-green: #448936;
+                --red: #FF9494;
+                --black: #0d0d24;
+               
+                --grey: rgb(181, 181, 181);
+                --white: rgb(228, 228, 228);
+                --blue: #abfdfd;
+                --dark-blue: #012456;
+                /* 
+                #ccffff 
+                #b8f8f8
+                */
+            }
+            html, body {
+                margin:0;
+                scroll-behavior: smooth;
+            }
+            * {
+                background-color: var(--black);
+                color: var(--white);
+                font-family: "Source Code Pro";
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+            p{
+                color:var(--grey);
+            }
+            button{
+                cursor:pointer;
+            }
+            #loading {
+                color: var(--green);
+            }
+            #cross-css{
+                border: 1px solid white;
+                background-color: #FF9494;
+                margin-left: 0px
+                ;display: inline; 
+                padding: 0px 5px 0px 5px;
+            }
+            #cross-css:hover{
+                animation: wiggling 0.25s infinite;
+            }
+            .tag{
+                color: var(--blue);
+            }
+            .section{
+                display: none;
+            }
+   
+            .extend{
+                /* display: inline; */
+                color: var(--grey);
+                font-size: 22px;
+                border:none;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+            }
+            .extend:hover{
+                color:var(--green);
+                animation: wiggling 0.25s infinite;
+            }
+            .error {
+                /* color: #FF9494; */
+                color: #a4000f;
+                background-color: #fdf2f5;
+            }
+            .validate-certification{
+                padding:0;
+                margin:0;
+                color:var(--green)
+            }
+            #projects {
+                white-space: pre;
+                display: none;  
+                float:left;
+                /* display:inline; */
+                background-color: white;
+                border: 4px dashed var(--red);
+                color: var(--black);
+                padding-right:100px;
+
+            }
+            .project-id {
+                color:var(--dark-green);
+                background-color: inherit;
+            }
+            .vue-project {
+                color:#3FB27F;
+                background-color: inherit;
+            }
+            .js-project {
+                color:#EFD81D;
+                background-color: inherit;
+            }
+            .php-project {
+                color: #4F5B93;
+                background-color: inherit;
+            }
+            .laravel-project{
+                color: #EF3B2D;
+                background-color: inherit;
+            }
+            .generated-uuid{
+                color:var(--dark-blue);
+                background-color: inherit;
+            }
+            .project-name {
+                color : var(--red);
+                background-color: inherit;
+            }
+            .project-link {
+                background-color: inherit;
+                color:var(--blue)
+            }
+            #skills-csv {
+                background-color: white;
+                color : black;
+                width:50%;
+                float:left;
+                white-space: pre;
+                height: 100%;
+            }
+            #skills-html {
+                background-color: white;
+                color : black;
+                width:50%;
+                float:right;
+                /* border-left: 0.1% solid black; */
+                margin-top:16px;
+                height: 100px;
+
+            }
+            @keyframes moving {
+                0%{transform: translateX(10px);}
+                50%{transform: translateX(25px);}
+                100%{transform: translateX(10px);}
+            }
+            @keyframes moving2 {
+                0%{transform: translateX(25px);}
+                50%{transform: translateX(10px);}
+                100%{transform: translateX(25px);}
+            }
+            @keyframes wiggling {
+                0%{transform: rotate(0deg) translateX(0px);}
+                50%{transform: rotate(5deg) translateX(1.5px);}
+                100%{transform: rotate(0deg) translateX(0px);}
+            }
+         
+            .clickHere {
+                color: var(--red);
+                position: absolute;
+                animation: moving 1.5s infinite linear;
+            }
+            .clickHere2 {
+                color: var(--red);
+                position: absolute;
+                animation: moving2 1.5s infinite linear;
+            }
+            h2{
+                margin-top: 50px;
+                margin-bottom: 30px;
+                margin-left:5%;
+            }
+            #contact{
+                top: 25px;
+            }
+            #stackoverflow{
+                bottom: 25px
+            }
+            #codewars{
+                bottom: 60px;
+            }
+            #github{
+                bottom: 95px;;
+            }
+            .fixed{
+                position: fixed;
+                right: 10px;
+                background-color: transparent;
+                font-size: 25px;
+                text-decoration: none;
+                color: var(--green)
+            }
+            .frame{
+                display: none;
+                position: fixed;
+                background-color: transparent;
+                font-size: 22.5px;
+                color: var(--dark-green);
+                margin: 0;
+            }
+            .fixed:hover{
+                color: white;
+            }
+            #easter-egg{
+                color: var(--black);
+            }
+            #run-wrapper{
+                border-radius:100%;
+                width:50px;
+                background: white;
+                height:50px;
+            }
+            #run {
+                border-top: 12.5px solid transparent;
+                border-left: 25px solid var(--red);
+                border-bottom: 12.5px solid transparent;
+                background-color: transparent;
+                margin-left: 15px;
+                margin-top: 25px;
+                top: 25%;
+                position: relative;
+            }
+            #run-wrapper:hover > #run {
+                border-left: 25px solid white;
+            }
+            #run-wrapper:hover  {
+               background-color: var(--red);
+            }
+
+        </style>
+    </div>
+    // to-do : buy milk
+</body>
+
+    
+</html>
