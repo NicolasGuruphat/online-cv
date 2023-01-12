@@ -197,7 +197,11 @@
 
     <h2>Have fun with the CSS of this website !</h2>
     <div style="border: 1px solid white">
-        <span style="border: 1px solid white; background-color: #505088; margin-right: 0px; padding-right: 5px;">styles.css</span><button onclick="removeAllCSS()" id="cross-css">X</button>
+        <div style="  width:100%;
+        display: flex;
+        align-items: center;">
+        <span style="border: 1px solid white; background-color: #505088; margin-right: 0px; margin-left: 0;padding-right: 5px; height:20px">styles.css</span><button onclick="removeAllCSS()" id="cross-css">X</button>
+        </div>
         <style style="display:block; border:1px solid white; white-space: pre ;background-color:var(--dark-blue)"
             contenteditable>
             @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
@@ -240,9 +244,10 @@
             #cross-css{
                 border: 1px solid white;
                 background-color: #FF9494;
-                margin-left: 0px
-                ;display: inline; 
+                margin-left: 0px;
+                display: inline; 
                 padding: 0px 5px 0px 5px;
+                height:22px;
             }
             #cross-css:hover{
                 animation: wiggling 0.25s infinite;
