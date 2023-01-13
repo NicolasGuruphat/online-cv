@@ -9,8 +9,7 @@
     <script src="./script.js"></script>
     <title>&gt Nicolas G.</title>
 <!-- TODO :
-    * Fix skills sections
-    * Fix bug {...} color after click
+    * Fix skills sections   
     * Add sumarry access on the right (fixed) with cool animation to do the transition
     * Finish color in projects + add projects
     * Fix Education section
@@ -43,7 +42,7 @@
     <h1><span class="tag">&lth1&gt</span> ~~~~~~~~~~~~~~     Nicolas Guruphat ~~~~~~~~~~~~~~ <span class="tag">&lt/h1&gt</span></h1>
 
     <!-- <p>Welcome to my portfolio ! (WIP)<span id="easter-egg">Well played</span></p> -->
-    <p style="text-align: center; margin-right:15%;"> <a href="#projects-title">Projects</a> / <a href="#skills-title">Skills</a> / <a href="#education-title">Education</a> / <a href="#certifications-title">Certifications</a></p>
+    <p style="text-align: center; margin-right:22%;"> <a href="#projects-title">Projects</a> / <a href="#skills-title">Skills</a> / <a href="#education-title">Education</a> / <a href="#certifications-title">Certifications</a></p>
 
     <h2 id="projects-title"><span class="tag">&lth2&gt</span> Projects.json <span class="tag">&lt/h2&gt</span></h2><button onclick="switchSection('projects')" class="extend" id = "open-bracket-projects">{ ... }</button>
     <br>
@@ -242,6 +241,7 @@
             #cross-css{
                 border: 1px solid white;
                 background-color: #FF9494;
+                position: relative;
                 margin-left: 0px;
                 display: inline; 
                 padding: 0px 5px 0px 5px;
@@ -267,7 +267,7 @@
 
             }
             .extend:hover{
-                color:var(--green);
+                color:var(--green) !important;
                 animation: wiggling 0.25s infinite;
             }
             .error {
@@ -396,8 +396,10 @@
             .fixed{
                 position: fixed;
                 right: 10px;
-                background-color: transparent;
+                background-color: #0d0d2472;
                 font-size: 25px;
+                text-decoration: none;
+                color: var(--green)
             }
             .frame{
                 display: none;
